@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: ogrizovicm/spring-boot-example
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0.1"
 

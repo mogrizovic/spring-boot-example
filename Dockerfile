@@ -1,11 +1,12 @@
-FROM openjdk:11
+FROM maven:3-eclipse-temurin-11 AS builder
 
 COPY . /usr/src/elkdemo
 WORKDIR /usr/src/elkdemo
+RUN mvn -Dmaven.test.skip=true clean package 
 
-RUN apt-get update && apt-get install -y maven
-RUN mkdir -p /var/log/application
-# RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.16.0-amd64.deb \
-# && dpkg -i filebeat-7.16.0-amd64.deb
+FROM eclipse-temurin:11.0.26_4-jre-ubi9-minimal
 
-CMD ["mvn", "spring-boot:run"]
+WORKDIR /usr/src/elkdemo
+COPY --from=builder /usr/src/elkdemo/target/*.jar elkdemo.jar
+
+ENTRYPOINT ["java", "-jar", "elkdemo.jar"]

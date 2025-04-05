@@ -19,5 +19,4 @@ public class ElkdemoApplication {
 	}
 
   // test pipeline trigger
-  // test pipeline trigger
 }

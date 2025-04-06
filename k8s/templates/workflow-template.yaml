@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: wf-tmpl-spring-boot-example
+  namespace: argo-workflows
+spec:
+  entrypoint: main
+  templates:
+  - name: main
+    inputs:
+      parameters:
+      - name: repo_name
+      - name: branch_name
+    steps:
+      - name: build
+        templateRef:
+          - name: kaniko-build-image
+        arguments:
+          parameters:
+            - name: image_name
+              value: spring-boot-example
+            - name: image_tag
+              value: "1.0.2"
+            - name: image_variant
+              value: "{{inputs.parameters.branch_name}}"
+            - name: repo
+              value: "{{inputs.parameters.repo_name}}"
+

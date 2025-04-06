@@ -11,6 +11,7 @@ spec:
       parameters:
       - name: repo_name
       - name: branch_name
+      - name: commit_message
     steps:
       - - name: build
           templateRef:
@@ -26,4 +27,6 @@ spec:
                 value: '{{ printf "{{inputs.parameters.branch_name}}" }}'
               - name: repo
                 value: '{{ printf "{{inputs.parameters.repo_name}}" }}'
+              - name: commit_message
+                value: '{{ printf "{{inputs.parameters.commit_message}}"}}'
 

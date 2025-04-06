@@ -18,7 +18,4 @@ public class ElkdemoApplication {
 		LOG.info("APPLICATION FINISHED");
 	}
 
-  // test trigger workflow
-  // test
-  // test
 }

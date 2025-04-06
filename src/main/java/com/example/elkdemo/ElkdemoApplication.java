@@ -18,5 +18,4 @@ public class ElkdemoApplication {
 		LOG.info("APPLICATION FINISHED");
 	}
 
-  // PR test
 }

@@ -18,6 +18,4 @@ public class ElkdemoApplication {
 		LOG.info("APPLICATION FINISHED");
 	}
 
-  //test
-  //test2
 }

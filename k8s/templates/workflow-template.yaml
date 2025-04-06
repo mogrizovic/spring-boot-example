@@ -28,5 +28,5 @@ spec:
               - name: repo
                 value: '{{ printf "{{inputs.parameters.repo_name}}" }}'
               - name: commit_message
-                value: '{{ printf "{{inputs.parameters.commit_message}}"}}'
+                value: '{{ printf "{{inputs.parameters.commit_message}}" }}'
 

@@ -22,7 +22,7 @@ spec:
             - name: image_tag
               value: "1.0.2"
             - name: image_variant
-              value: "{{inputs.parameters.branch_name}}"
+              value: {{ printf "{{inputs.parameters.branch_name}}" }}
             - name: repo
-              value: "{{inputs.parameters.repo_name}}"
+              value: {{ printf "{{inputs.parameters.repo_name}}" }}
 

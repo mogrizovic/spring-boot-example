@@ -14,7 +14,7 @@ spec:
     steps:
       - - name: build
           templateRef:
-            - name: kaniko-build-image
+            name: kaniko-build-image
           arguments:
             parameters:
               - name: image_name

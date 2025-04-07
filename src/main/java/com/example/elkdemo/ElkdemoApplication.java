@@ -19,10 +19,4 @@ public class ElkdemoApplication {
 	}
 
   // PR test
-  // PR test
-  // PR test
-  // PR test
-  // PR test
-  // PR test
-  // PR test
 }

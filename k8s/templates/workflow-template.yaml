@@ -28,3 +28,23 @@ spec:
               - name: commit_message
                 value: '{{ printf "{{inputs.parameters.commit_message}}" }}'
 
+      - - name: get-gh-token
+          templateRef:
+            name: github-app-auth
+            template: generate-token
+
+      - - name: commit-tag
+          templateRef:
+            name: commit-helm-image-tag
+            template: commit-image-tag
+          arguments:
+            parameters:
+              - name: repo_name
+                value: "{{inputs.parameters.repo_name}}"
+              - name: branch_name
+                value: "{{inputs.parameters.branch_name}}"
+              - name: image_tag
+                value: "{{steps.build.outputs.parameters.next_tag}}"
+              - name: access_token
+                value: "{{steps.get-gh-token.outputs.parameters.access_token}}"
+

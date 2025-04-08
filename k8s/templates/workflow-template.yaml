@@ -40,11 +40,11 @@ spec:
           arguments:
             parameters:
               - name: repo_name
-                value: "{{inputs.parameters.repo_name}}"
+                value: '{{ printf "{{inputs.parameters.repo_name}}" }}'
               - name: branch_name
-                value: "{{inputs.parameters.branch_name}}"
+                value: '{{ printf "{{inputs.parameters.branch_name}}" }}'
               - name: image_tag
-                value: "{{steps.build.outputs.parameters.next_tag}}"
+                value: '{{ printf "{{steps.build.outputs.parameters.next_tag}}" }}'
               - name: access_token
-                value: "{{steps.get-gh-token.outputs.parameters.access_token}}"
+                value: '{{ printf "{{steps.get-gh-token.outputs.parameters.access_token}}" }}'
 

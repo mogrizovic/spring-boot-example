@@ -12,6 +12,7 @@ spec:
       - name: repo_name
       - name: branch_name
       - name: commit_message
+      - name: image_variant
     steps:
       - - name: build
           templateRef:
@@ -22,6 +23,8 @@ spec:
               - name: image_name
                 value: "ogrizovicm/spring-boot-example"
               - name: image_variant
+                value: '{{ printf "{{inputs.parameters.image_variant}}" }}'
+              - name: branch_name
                 value: '{{ printf "{{inputs.parameters.branch_name}}" }}'
               - name: repo
                 value: '{{ printf "{{inputs.parameters.repo_name}}" }}'

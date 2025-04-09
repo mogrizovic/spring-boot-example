@@ -47,4 +47,6 @@ spec:
                 value: '{{ printf "{{workflow.outputs.parameters.image_next_tag}}" }}'
               - name: access_token
                 value: '{{ printf "{{workflow.outputs.parameters.gh_access_token}}" }}'
+              - name: values_path
+                value: 'k8s/values.yaml'
 

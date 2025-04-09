@@ -44,7 +44,7 @@ spec:
               - name: branch_name
                 value: '{{ printf "{{inputs.parameters.branch_name}}" }}'
               - name: image_tag
-                value: '{{ printf "{{steps.build.outputs.parameters.next_tag}}" }}'
+                value: '{{ printf "{{workflow.outputs.parameters.image_next_tag}}" }}'
               - name: access_token
-                value: '{{ printf "{{steps.get-gh-token.outputs.parameters.access_token}}" }}'
+                value: '{{ printf "{{workflow.outputs.parameters.gh_access_token}}" }}'
 

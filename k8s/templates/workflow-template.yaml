@@ -10,9 +10,9 @@ spec:
     inputs:
       parameters:
       - name: repo_name
-      - name: branch_name
       - name: commit_message
       - name: image_variant
+      - name: branch_name
     steps:
       - - name: build
           templateRef:

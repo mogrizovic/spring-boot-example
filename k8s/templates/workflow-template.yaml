@@ -13,6 +13,7 @@ spec:
       - name: commit_message
       - name: image_variant
       - name: branch_name
+      - name: commit_sha
     steps:
       - - name: build
           templateRef:
@@ -30,6 +31,8 @@ spec:
                 value: '{{ printf "{{inputs.parameters.repo_name}}" }}'
               - name: commit_message
                 value: '{{ printf "{{inputs.parameters.commit_message}}" }}'
+              - name: commit_sha
+                value: '{{ printf "{{inputs.parameters.commit_sha}}" }}'
 
       - - name: get-gh-token
           templateRef:

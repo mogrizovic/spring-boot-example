@@ -48,6 +48,8 @@ spec:
                 value: '{{ printf "{{inputs.parameters.branch_name}}" }}'
               - name: image_tag
                 value: '{{ printf "{{workflow.outputs.parameters.image_next_tag}}" }}'
+              - name: image_prerelease
+                value: '{{ printf "{{workflow.outputs.parameters.image_prerelease}}" }}'
               - name: access_token
                 value: '{{ printf "{{workflow.outputs.parameters.gh_access_token}}" }}'
               - name: values_path

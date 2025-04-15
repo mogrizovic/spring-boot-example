@@ -8,7 +8,7 @@ image:
   repository: ogrizovicm/spring-boot-example
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 1.1.0--feat_testing
+  tag: 1.1.0-feat_testing
 
 imagePullSecrets: []
 nameOverride: ""
